@@ -79,6 +79,7 @@ function executeCommand(cmd) {
 
     currentCommand = '';
     createPromptLine();
+    scrollToBottom();
 }
 
 function updateInputDisplay() {
@@ -109,6 +110,13 @@ function activateNeonTheme() {
         terminalDiv.style.boxShadow = '0 0 20px #ff00ff, 0 0 40px #00ffff';
         terminalDiv.classList.add('neon-glow');
     }
+}
+
+function scrollToBottom() {
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: 'smooth' // pour un défilement fluide
+  });
 }
 
 console.log("Bonjour, que cherchez vous ici ? Voici une photo de moi dans le doute: "+window.location.href+"/medias/photo.txt")
