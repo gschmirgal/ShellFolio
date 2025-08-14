@@ -4,7 +4,7 @@ let inputArea = null;
 
 let commands = null;
 let commandsLoaded = false;
-let commandList = ["clear", "rickroll", "theme neon", "help", "danger"]; //commandes ajoutées dans le code
+let commandList = ["barrel roll", "clear", "rickroll", "theme neon", "help", "danger"]; //commandes ajoutées dans le code
 fetch('commands.json')
     .then(response => response.json())
     .then(data => {
@@ -72,6 +72,10 @@ function executeCommand(cmd) {
             printResponse("It's dangerous to go alone! Take this: 🗡️");
             document.getElementById("danger_audio").play();
             break;
+        case 'barrel roll':
+            printResponse("🐸🦊🐦🐰!!");
+            barrelRoll();
+            break;
 
         default:
             printResponse(`Commande inconnue : ${cmd}`);
@@ -118,5 +122,16 @@ function scrollToBottom() {
     behavior: 'smooth' // pour un défilement fluide
   });
 }
+
+function barrelRoll() {
+  document.body.style.transition = 'transform 2s ease-in-out';
+  document.body.style.transform = 'rotate(360deg)';
+
+  // Remettre à zéro après la rotation
+  setTimeout(() => {
+    document.body.style.transform = '';
+  }, 2000);
+}
+
 
 console.log("Bonjour, que cherchez vous ici ? Voici une photo de moi dans le doute: "+window.location.href+"/medias/photo.txt")
