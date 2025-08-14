@@ -1,0 +1,18 @@
+ switch (cmd) {
+        case 'help':
+          printResponse("📜 Commandes : <strong>help</strong>, <strong>contact</strong>, <strong>projets</strong>, <strong>clear</strong>, <strong>rickroll</strong>");
+          break;
+        case 'contact':
+          printResponse("📧 Email : <a href='mailto:guillaume@example.com'>guillaume@example.com</a>");
+          break;
+        case 'projets':
+          printResponse("📁 <a href='https://github.com/guillaume/projet1' target='_blank'>projet1</a><br>📁 <a href='https://github.com/guillaume/projet2' target='_blank'>projet2</a>");
+          break;
+        case 'clear':
+          terminal.innerHTML = '';
+          break;
+        case 'rickroll':
+          window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank');
+          printResponse("🎵 Never gonna give you up...");
+          break;
+ }
