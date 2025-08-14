@@ -78,7 +78,7 @@ function executeCommand(cmd) {
             break;
 
         default:
-            printResponse(`Commande inconnue : ${cmd}`);
+            printResponse(`Commande inconnue : ${cmd} - Tappez help pour de l'aide`);
     }
 
     currentCommand = '';
