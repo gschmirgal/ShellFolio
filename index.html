@@ -5,94 +5,9 @@
   <title>Guillaume — Terminal Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="./console.css">
-  
+  <script src="./console.js" defer></script>
 </head>
 <body tabindex="0">
-  
-  <div id="terminal">
-  </div>
-
-  <script>
-    const terminal = document.getElementById('terminal');
-    let currentCommand = '';
-    let inputArea = null;
-
-    let commands = null;
-    let commandsLoaded = false;
-    fetch('commands.json')
-      .then(response => response.json())
-      .then(data => {
-        commands = data;
-        commandsLoaded = true;
-      });
-
-    function createPromptLine() {
-      const promptLine = document.createElement('div');
-      promptLine.className = 'line';
-      promptLine.innerHTML = `guillaume@portfolio:~$ <span id="inputArea"></span><span class="cursor">█</span>`;
-      terminal.appendChild(promptLine);
-      terminal.scrollTop = terminal.scrollHeight;
-      inputArea = promptLine.querySelector('#inputArea');
-    }
-
-    function printResponse(responseHTML = '') {
-      if (responseHTML) {
-        const response = document.createElement('div');
-        response.className = 'line';
-        response.innerHTML = responseHTML;
-        terminal.appendChild(response);
-        terminal.scrollTop = terminal.scrollHeight;
-      }
-    }
-
-    function executeCommand(cmd) {
-      // Replace current prompt line with static command
-      inputArea.parentElement.innerHTML = `guillaume@portfolio:~$ ${cmd}`;
-
-      if (!commandsLoaded) {
-        printResponse("⏳ Les commandes ne sont pas encore prêtes. Veuillez patienter.");
-        currentCommand = '';
-        createPromptLine();
-        return;
-      }
-
-      if (commands.hasOwnProperty(cmd)) {
-        printResponse(commands[cmd]);
-        if (cmd === 'clear') {
-          terminal.innerHTML = '';
-        }
-        if (cmd === 'rickroll') {
-          window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank');
-        }
-      } else {
-        printResponse(`Commande inconnue : ${cmd}`);
-      }
-
-      currentCommand = '';
-      createPromptLine();
-    }
-
-    function updateInputDisplay() {
-      if (inputArea) {
-        inputArea.textContent = currentCommand;
-        terminal.scrollTop = terminal.scrollHeight;
-      }
-    }
-
-    document.body.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') {
-        executeCommand(currentCommand.trim().toLowerCase());
-      } else if (e.key === 'Backspace') {
-        currentCommand = currentCommand.slice(0, -1);
-        updateInputDisplay();
-      } else if (e.key.length === 1) {
-        currentCommand += e.key;
-        updateInputDisplay();
-      }
-    });
-
-    // Initial prompt
-    createPromptLine();
-  </script>
+  <div id="terminal"></div>
 </body>
 </html>

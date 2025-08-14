@@ -1,33 +1,45 @@
 body {
-      margin: 0;
-      background-color: #000;
-      color: #00ff00;
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 1.1rem;
-      padding: 2rem;
-      overflow: hidden;
-    }
-    #terminal {
-      min-height: 80vh;
-      overflow-y: auto;
-    }
-    .line {
-      margin-bottom: 0.8rem;
-      white-space: pre-wrap;
-    }
-    a {
-      color: #00ff00;
-      text-decoration: none;
-    }
-    a:hover {
-      color: #00cc00;
-    }
-    .cursor {
-      display: inline-block;
-      width: 10px;
-      animation: blink 1s infinite;
-    }
-    @keyframes blink {
-      0%, 50% { opacity: 1; }
-      51%, 100% { opacity: 0; }
-    }
+  margin: 0;
+  background-color: #000;
+  color: #00ff00;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.1rem;
+  padding: 2rem;
+  /* overflow: hidden; supprimé pour permettre le scroll */
+}
+#terminal {
+  min-height: 80vh;
+  overflow-y: auto;
+}
+.line {
+  margin-bottom: 0.8rem;
+  white-space: pre-wrap;
+}
+a {
+  color: #00ff00;
+}
+a:hover {
+  color: #00cc00;
+}
+.cursor {
+  display: inline-block;
+  width: 10px;
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.neon-glow {
+  animation: neonPulse 1.5s infinite alternate;
+}
+
+@keyframes neonPulse {
+  from {
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+  }
+  to {
+    box-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff;
+  }
+}
