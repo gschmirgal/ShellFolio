@@ -1,4 +1,26 @@
 const terminal = document.getElementById('terminal');
+
+// Ajout d'un input invisible pour mobile
+const mobileInput = document.createElement('input');
+mobileInput.type = 'text';
+mobileInput.id = 'mobileInput';
+mobileInput.autocomplete = 'off';
+mobileInput.autocapitalize = 'off';
+mobileInput.spellcheck = false;
+mobileInput.style.position = 'absolute';
+mobileInput.style.opacity = 0;
+mobileInput.style.height = '1px';
+mobileInput.style.width = '1px';
+mobileInput.style.zIndex = 0;
+mobileInput.style.pointerEvents = 'none';
+document.body.appendChild(mobileInput);
+
+function focusMobileInputIfNeeded() {
+    // Si sur mobile (tactile), focus l'input
+    if (/Mobi|Android|iPhone|iPad|iPod|Touch/i.test(navigator.userAgent)) {
+        mobileInput.focus();
+    }
+}
 let currentCommand = '';
 let inputArea = null;
 
@@ -92,17 +114,45 @@ function updateInputDisplay() {
     }
 }
 
+
+// Gestion clavier physique (desktop)
 document.body.addEventListener('keydown', function(e) {
+    // Ne rien faire si l'input mobile est focus (évite double saisie)
+    if (document.activeElement === mobileInput) return;
     if (e.key === 'Enter') {
         executeCommand(currentCommand.trim().toLowerCase());
+        focusMobileInputIfNeeded();
     } else if (e.key === 'Backspace') {
         currentCommand = currentCommand.slice(0, -1);
         updateInputDisplay();
     } else if (e.key.length === 1) {
-    currentCommand += e.key;
+        currentCommand += e.key;
         updateInputDisplay();
     }
+    focusMobileInputIfNeeded();
 });
+
+// Gestion clavier virtuel (mobile)
+mobileInput.addEventListener('input', function(e) {
+    currentCommand = mobileInput.value;
+    updateInputDisplay();
+});
+mobileInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+        executeCommand(currentCommand.trim().toLowerCase());
+        mobileInput.value = '';
+        currentCommand = '';
+        updateInputDisplay();
+        e.preventDefault();
+    }
+});
+
+// Focus auto sur mobile au toucher
+terminal.addEventListener('touchstart', focusMobileInputIfNeeded);
+document.body.addEventListener('touchstart', focusMobileInputIfNeeded);
+
+// Focus auto au chargement sur mobile
+window.addEventListener('load', focusMobileInputIfNeeded);
 
 function activateNeonTheme() {
     document.body.style.backgroundColor = '#0f0f0f';
