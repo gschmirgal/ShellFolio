@@ -5,7 +5,8 @@
         "contact": "📧 Email : <a href='mailto:g.schmirgal@gmail.com'>g.schmirgal@gmail.com</a>",
         "projets": "📁MKMpy front & provisioning\n\tSite de referencement des prix sur cardmarket et utilisant les images de Scryfall.\n\tFront en PHP Symphony hébergé <a href='https://mkmpyfront.gschmirgal.ovh/' target='blank'>ici</a>, lien GitHub <a href='https://github.com/gschmirgal/frontMkmPy' target='_blank'>là</a>\n\tProvisioning en Python lien Github <a href='https://github.com/gschmirgal/mkmpy' target='_blank'>là</a>\n📁SudokuVueJS\n\tSolveur de Sudoku en vue.js\n\tHébergé <a href='https://sudokuvuejs.gschmirgal.ovh/' target='blank'>ici</a>, lien GitHub <a href='https://github.com/gschmirgal/SudokuVueJS' target='_blank'>là</a>\n📁IntranetReact\n\tSite d'intranet en React généré à sur un json simple à updater.\n\tHébergé <a href='https://intranetreact.gschmirgal.ovh/' target='blank'>ici</a>, lien GitHub <a href='https://github.com/gschmirgal/intranet-react' target='_blank'>là</a>\n📁ShellFolio\n\tPrésentation sous forme de console\n\tHébergé ... vous l'utilisez en ce moment, lien GitHub <a href='https://github.com/gschmirgal/ShellFolio' target='_blank'>là</a>",
         "about": "Ce portfolio a été créé pour présenter mes compétences et projets.",
-        "liens": "💻 <a href='https://github.com/gschmirgal' target='_blank'>GitHub</a>\n💼 <a href='https://www.linkedin.com/in/schmirgal/' target='_blank'>LinkedIn</a>"
+        "liens": "💻 <a href='https://github.com/gschmirgal' target='_blank'>GitHub</a>\n💼 <a href='https://www.linkedin.com/in/schmirgal/' target='_blank'>LinkedIn</a>",
+        "cv": "📄 Mon CV est disponible <a href='./medias/CV_Guillaume_SCHMIRGAL.pdf' target='_blank'>ici</a>."
     },
     "startup": [
         "hello",
