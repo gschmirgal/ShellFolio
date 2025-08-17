@@ -35,7 +35,7 @@ Ouvrez `index.html` dans votre navigateur.
 
 - Modifiez les commandes et le démarrage dans `commands.json`.
 - Personnalisez le style dans `console.css`.
-- Ajoutez ou adaptez les commandes dans le script de `consoe.js`.
+- Ajoutez ou adaptez les commandes dans le script de `console.js`.
 
 ## Commandes disponibles (exemples)
 
