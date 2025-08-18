@@ -1,0 +1,12 @@
+📁<a href='https://mkmpyfront.gschmirgal.ovh/' target='blank'>MKMpy front</a> & provisioning - <a href='https://github.com/gschmirgal/frontMkmPy' target='_blank'>Github front</a> & <a href='https://github.com/gschmirgal/mkmpy' target='_blank'>Github Provisioning</a>
+	Site de referencement des prix sur cardmarket et utilisant les images de Scryfall.
+	Front en PHP Symphony hébergé & son provisioning en Python. lien Github là
+
+📁<a href='https://sudokuvuejs.gschmirgal.ovh/' target='blank'>SudokuVueJS</a> - <a href='https://github.com/gschmirgal/SudokuVueJS' target='_blank'>GitHub</a>
+	Solveur de Sudoku en vue.js
+
+📁<a href='https://intranetreact.gschmirgal.ovh/' target='blank'>IntranetReact</a> - <a href='https://github.com/gschmirgal/intranet-react' target='_blank'>GitHub</a>
+	Site d'intranet en React généré à sur un json simple à updater.
+
+📁<a href='/' target='_blank'>ShellFolio</a> - <a href='https://github.com/gschmirgal/shellfolio' target='_blank'>GitHub</a>
+	Présentation sous forme de console (vous l'utilisez actuellement)
