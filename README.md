@@ -42,15 +42,18 @@ ShellFolio/
 	- Ouvre `index.html` dans ton navigateur.
 
 ## Ajouter/modifier des commandes
-- Pour des commandes simples (texte), modifie `commands.json`.
-- Pour des commandes avancées (fonctions JS, sons, animations), ajoute-les dans `assets/commands.js` et exporte-les.
 - Les commandes personnalisées sont automatiquement ajoutées à la liste des commandes disponibles.
 
-## Exemple d'ajout de son en JS
-```js
-const audio = new Audio('./medias/danger.mp3');
-audio.play();
-```
+
+## Ajouter/modifier des commandes
+- Pour des commandes simples (texte), modifie `commands.json`.
+- Pour des commandes avancées (fonctions JS, sons, animations), il faut :
+	1. Ajouter la commande dans `commands.json` (avec un texte d’aide ou d’explication).
+	2. Ajouter la fonction correspondante dans `assets/commands.js` et l’exporter.
+- Les commandes personnalisées sont automatiquement ajoutées à la liste des commandes disponibles.
+
+### À propos du champ `startup` dans le JSON
+Le tableau `startup` dans `commands.json` permet de lister les commandes qui seront exécutées automatiquement au lancement de la console (par exemple, afficher un message de bienvenue, une présentation, etc.).
 
 ## Compatibilité mobile
 - Un champ texte invisible permet d'afficher le clavier virtuel sur smartphone.

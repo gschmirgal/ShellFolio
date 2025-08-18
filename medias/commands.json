@@ -1,6 +1,6 @@
 {
     "commands": {
-        "hello": "👋Bonjour, bienvenue sur le portfolio console.",
+        "hello": "👋Bonjour, bienvenue sur le portfolio console.\nN'hésitez pas à explorer les différentes commandes disponibles.",
         "whoami": "Ingénieur Logiciel/Développeur passionné.Fort de mon expérience PHP de plus de 10 ans, je me forme aussi sur de nouvelles technologies que je pratique autour de projets disponible ici.",
         "contact": "📧 Email : <a href='mailto:g.schmirgal@gmail.com'>g.schmirgal@gmail.com</a>",
         "projets": "projetJS",
