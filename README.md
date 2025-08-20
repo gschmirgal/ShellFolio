@@ -1,5 +1,3 @@
-git clone https://github.com/gschmirgal/ShellFolio.git
-
 # ShellFolio
 
 ShellFolio est un portfolio interactif sous forme de terminal web, développé par Guillaume Schmirgal.
