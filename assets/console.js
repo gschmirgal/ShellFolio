@@ -40,9 +40,12 @@ fetch('/medias/commands.json')
         // Initial prompt
         createPromptLine();
         if (Array.isArray(startup)) {
-            startup.forEach(cmd => {
-                executeCommand(cmd);
-            });
+            (async () => {
+                for (const cmd of startup) {
+                    executeCommand(cmd);
+                    await sleep(750); // Petite pause entre les commandes
+                }
+            })();
         }
     });
 
@@ -155,6 +158,11 @@ function scrollToBottom() {
     behavior: 'smooth' // pour un défilement fluide
   });
 }
+
+async function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 
 
 console.log("Bonjour, que cherchez vous ici ? Voici une photo de moi dans le doute: "+window.location.href+"/medias/photo.txt")
