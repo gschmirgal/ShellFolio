@@ -5,7 +5,14 @@ body {
   font-family: 'Courier New', Courier, monospace;
   font-size: 1.1rem;
   padding: 2rem;
-  /* overflow: hidden; supprimé pour permettre le scroll */
+}
+#mobileInput{
+  position: absolute;
+  opacity: 0;
+  height: 1px;
+  width: 1px;
+  z-index: 0;
+  pointer-events: none;
 }
 #terminal {
   min-height: 80vh;

@@ -1,21 +1,7 @@
 import * as commandsJS from "./commands.js"
 
-const terminal = document.getElementById('terminal');
-
-// Ajout d'un input invisible pour mobile
-const mobileInput = document.createElement('input');
-mobileInput.type = 'text';
-mobileInput.id = 'mobileInput';
-mobileInput.autocomplete = 'off';
-mobileInput.autocapitalize = 'off';
-mobileInput.spellcheck = false;
-mobileInput.style.position = 'absolute';
-mobileInput.style.opacity = 0;
-mobileInput.style.height = '1px';
-mobileInput.style.width = '1px';
-mobileInput.style.zIndex = 0;
-mobileInput.style.pointerEvents = 'none';
-document.body.appendChild(mobileInput);
+const terminal      = document.getElementById('terminal');
+const mobileInput   = document.getElementById('mobileInput');
 
 function focusMobileInputIfNeeded() {
     // Si sur mobile (tactile), focus l'input
@@ -28,15 +14,26 @@ let inputArea = null;
 
 let commands = null;
 let commandsLoaded = false;
+let user = "gschmirgal";
+let host = "ShellFolio";
 let commandList = ["clear", "help"]; //commandes ajoutées dans le code
-fetch('/medias/commands.json')
+fetch('/assets/commands.json')
     .then(response => response.json())
     .then(data => {
+        const config = data['config'];
+        if( config && config['user'] )
+            user = config['user'];
+        if( config && config['host'] )
+            host = config['host'];
+
+        document.title = `${user} — ${host}`;
+
         commands = data['commands'];
-        commandsLoaded = true;
         // Fusionne la liste initiale et les commandes dynamiquement, sans doublons
         commandList = Array.from(new Set([...commandList, ...Object.keys(commands)])).sort();
+        commandsLoaded = true;
         const startup = data['startup'];
+        
         // Initial prompt
         createPromptLine();
         if (Array.isArray(startup)) {
@@ -52,7 +49,7 @@ fetch('/medias/commands.json')
 function createPromptLine() {
     const promptLine = document.createElement('div');
     promptLine.className = 'line';
-    promptLine.innerHTML = `gschmirgal@shellfolio:~$ <span id=\"inputArea\"></span><span class=\"cursor\">█</span>`;
+    promptLine.innerHTML = `${user}@${host}:~$ <span id=\"inputArea\"></span><span class=\"cursor\">█</span>`;
     terminal.appendChild(promptLine);
     inputArea = promptLine.querySelector('#inputArea');
 }
@@ -68,7 +65,7 @@ function printResponse(responseHTML = '') {
 
 function executeCommand(cmd) {
     // Replace current prompt line with static command
-    inputArea.parentElement.innerHTML = `gschmirgal@shellfolio:~$ ${cmd}`;
+    inputArea.parentElement.innerHTML = `${user}@${host}:~$ ${cmd}`;
 
     if (!commandsLoaded) {
         printResponse("⏳ Les commandes ne sont pas encore prêtes. Veuillez patienter.");

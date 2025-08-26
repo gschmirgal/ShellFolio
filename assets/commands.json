@@ -16,5 +16,9 @@
         "whoami",
         "projets",
         "liens"
-    ]
+    ],
+    "config": {
+        "user": "g.schmirgal",
+        "host": "ShellFolio"
+    }
 }
