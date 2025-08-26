@@ -97,7 +97,7 @@ Le tableau `startup` dans `commands.json` permet de lister les commandes qui ser
 export function danger() {
 	const audio = new Audio('./medias/danger.mp3');
 	audio.play();
-	alert("It's dangerous to go alone! Take this: 🗡️");
+	return "It's dangerous to go alone! Take this: 🗡️";
 }
 ```
 
