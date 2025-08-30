@@ -1,3 +1,21 @@
+function getFileContent(url) {
+    const xhr = new XMLHttpRequest();
+    try {
+        xhr.open('GET', url, false); // false pour synchrone
+        xhr.send(null);
+        if (xhr.status === 200) {
+            return xhr.responseText;
+        } else {
+            return "Erreur lors de la lecture du fichier " + url;
+        }
+    } catch (e) {
+        return "Erreur lors de la lecture du fichier " + url;
+    }
+}
+
+export async function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 export function barrelRoll() {
   document.body.style.transition = 'transform 2s ease-in-out';
@@ -29,22 +47,22 @@ export function rickroll(){
 }
 
 export function zelda(){
-    const audio = new Audio('/medias/danger.mp3');
+    const audio = new Audio('/medias/audio/danger.mp3');
     audio.play();
     return "It's dangerous to go alone! Take this: 🗡️";
 }
 
 export function projetJS() {
-    const xhr = new XMLHttpRequest();
-    try {
-        xhr.open('GET', '/medias/projects.txt', false); // false pour synchrone
-        xhr.send(null);
-        if (xhr.status === 200) {
-            return xhr.responseText;
-        } else {
-            return "Erreur lors de la lecture du fichier projects.txt";
-        }
-    } catch (e) {
-        return "Erreur lors de la lecture du fichier projects.txt";
-    }
+    return getFileContent('/medias/txt/projects.txt');
+}
+
+export async function boot(){
+    const terminal = document.getElementById('terminal');
+    const audio = new Audio('/medias/audio/boot.mp3');
+    audio.play();
+    terminal.innerHTML = "<div class='line'>" + getFileContent('/medias/txt/boot.txt') + "</div>";
+    await sleep(7000);
+    terminal.innerHTML = "";
+    await sleep(1000);
+    return "";
 }

@@ -9,7 +9,8 @@
         "cv": "📄 Mon CV est disponible <a href='./medias/CV_Guillaume_SCHMIRGAL.pdf' target='_blank'>ici</a>.",
         "barrel-roll": "barrelRoll",
         "neon": "activateNeonTheme",
-        "danger":"zelda"
+        "danger":"zelda",
+        "reboot":"boot"
     },
     "startup": [
         "hello",

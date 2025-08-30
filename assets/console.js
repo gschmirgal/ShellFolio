@@ -40,7 +40,7 @@ fetch('/assets/commands.json')
             (async () => {
                 for (const cmd of startup) {
                     executeCommand(cmd);
-                    await sleep(750); // Petite pause entre les commandes
+                    await commandsJS.sleep(750); // Petite pause entre les commandes
                 }
             })();
         }
@@ -63,7 +63,7 @@ function printResponse(responseHTML = '') {
     }
 }
 
-function executeCommand(cmd) {
+async function executeCommand(cmd) {
     // Replace current prompt line with static command
     inputArea.parentElement.innerHTML = `${user}@${host}:~$ ${cmd}`;
 
@@ -86,7 +86,8 @@ function executeCommand(cmd) {
         default:
             if (commands.hasOwnProperty(cmd)) {
                 if (typeof commandsJS[commands[cmd]] === 'function') {
-                    printResponse(commandsJS[commands[cmd]]());
+                    const plop = await commandsJS[commands[cmd]]();
+                    printResponse(plop);
                 }else{
                     printResponse(commands[cmd]);
                 }
@@ -155,11 +156,6 @@ function scrollToBottom() {
     behavior: 'smooth' // pour un défilement fluide
   });
 }
-
-async function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 
 
 console.log("Bonjour, que cherchez vous ici ? Voici une photo de moi dans le doute: "+window.location.href+"/medias/photo.txt")

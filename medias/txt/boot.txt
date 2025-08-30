@@ -1,0 +1,29 @@
+===============================================================================
+ ____  _          _ _ _____     _ _       
+/ ___|| |__   ___| | |  ___|__ | (_) ___  
+\___ \| '_ \ / _ \ | | |_ / _ \| | |/ _ \ 
+ ___) | | | |  __/ | |  _| (_) | | | (_) |
+|____/|_| |_|\___|_|_|_|  \___/|_|_|\___/ 
+===============================================================================
+
+CPU: Intel(R) Core(TM) i7-7700K @4.20GHz  Cache: L1:256KB  L2:1MB  L3:8MB   (⚙)
+Motherboard: SHELLFOLIO-TECH  BIOS: SFV1.23  Date: 01/15/2018  [▉▉▉]
+Memory Test : [█████████████     ] 32768K OK
+
+Detecting IDE Channels . . . 
+  Primary Master   [Seagate_ST1000DM010-2EP102]
+  Primary Slave    [None]
+  Secondary Master [Samsung_SSD_860EVO_500GB]
+  Secondary Slave  [None]
+
+Detecting USB Devices . . . 
+  USB1 : [⌨️ KEYBOARD]
+  USB2 : [🖱 MOUSE   ]
+  USB3 : [💾 STORAGE ]
+  USB4 : [— NONE — ]
+
+Boot Sequence Priority:
+  [1] Hard Disk   [■]
+  [2] CD/DVD-ROM  [◼]
+  [3] USB Storage [◻]
+  [4] Network     [▢]
