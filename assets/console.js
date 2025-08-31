@@ -158,4 +158,4 @@ function scrollToBottom() {
 }
 
 
-console.log("Bonjour, que cherchez vous ici ? Voici une photo de moi dans le doute: "+window.location.href+"/medias/photo.txt")
+console.log("Bonjour, que cherchez vous ici ? Voici une photo de moi dans le doute: "+window.location.href+"/medias/txt/photo.txt")
