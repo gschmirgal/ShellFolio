@@ -10,6 +10,7 @@
         "barrel-roll": "barrelRoll",
         "neon": "activateNeonTheme",
         "danger":"zelda",
+        "rickroll":"rickroll",
         "reboot":"boot"
     },
     "startup": [

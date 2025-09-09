@@ -1,6 +1,6 @@
 📁<a href='https://mkmpyfront.gschmirgal.ovh/' target='blank'>MKMpy front</a> & provisioning - <a href='https://github.com/gschmirgal/frontMkmPy' target='_blank'>Github front</a> & <a href='https://github.com/gschmirgal/mkmpy' target='_blank'>Github Provisioning</a>
 	Site de référencement des prix sur cardmarket et utilisant les images de Scryfall.
-	Front en PHP Symphony et son provisioning en Python.
+	Front en PHP Symfony et son provisioning en Python.
 
 📁<a href='https://sudokuvuejs.gschmirgal.ovh/' target='blank'>SudokuVueJS</a> - <a href='https://github.com/gschmirgal/SudokuVueJS' target='_blank'>GitHub</a>
 	Solveur de Sudoku en vue.js
