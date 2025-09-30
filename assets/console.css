@@ -6,36 +6,53 @@ body {
   font-size: 1.1rem;
   padding: 2rem;
 }
-#mobileInput{
+
+#mobileInput {
   position: absolute;
   opacity: 0;
   height: 1px;
   width: 1px;
   z-index: 0;
-  pointer-events: none;
+  pointer-events: auto;
+  /* Permet le focus et la saisie */
+  /*font-size: 16px;      /* Évite le zoom et les bugs clavier sur mobile */
 }
+
 #terminal {
   min-height: 80vh;
   overflow-y: auto;
 }
+
 .line {
   margin-bottom: 0.8rem;
   white-space: pre-wrap;
 }
+
 a {
   color: #00ff00;
 }
+
 a:hover {
   color: #00cc00;
 }
+
 .cursor {
   display: inline-block;
   width: 10px;
   animation: blink 1s infinite;
 }
+
 @keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
 
 .neon-glow {
@@ -46,6 +63,7 @@ a:hover {
   from {
     box-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
   }
+
   to {
     box-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff;
   }
