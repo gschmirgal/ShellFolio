@@ -5,13 +5,12 @@
         "contact": "📧 Email : <a href='mailto:g.schmirgal@gmail.com'>g.schmirgal@gmail.com</a>",
         "projets": "projetJS",
         "about": "Ce portfolio a été créé pour présenter mes compétences et projets.",
-        "liens": "💻 <a href='https://github.com/gschmirgal' target='_blank'>GitHub</a>\n💼 <a href='https://www.linkedin.com/in/schmirgal/' target='_blank'>LinkedIn</a>",
-        "cv": "📄 Mon CV est disponible <a href='./medias/CV_Guillaume_SCHMIRGAL.pdf' target='_blank'>ici</a>.",
+        "liens": "💻 <a href='https://github.com/gschmirgal' target='_blank'>GitHub</a>\n💼 <a href='https://www.linkedin.com/in/schmirgal/' target='_blank'>LinkedIn</a>\n📄 <a href='./medias/CV_Guillaume_SCHMIRGAL.pdf' target='_blank'>CV</a>",
         "barrel-roll": "barrelRoll",
         "neon": "activateNeonTheme",
-        "danger":"zelda",
-        "rickroll":"rickroll",
-        "reboot":"boot"
+        "danger": "zelda",
+        "rickroll": "rickroll",
+        "reboot": "boot"
     },
     "startup": [
         "hello",
